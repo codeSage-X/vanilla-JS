@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortune Spin</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dice.css">
+
+    <link rel="icon" href="images/3d-dice-cube-simple-game-for-presentation-png.webp" type="image/png"/>
+    
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container canvas">
+   <div class="game-box">
+       <div class="status-bar hide">
+           <div class="time">
+             <div class="board">
+                <h4>Spins</h4>
+                <p id="spins">
+                    <!-- 0 -->
+                </p>   
+             </div>
+           </div>
+           <div class="score">
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="crystal">
+                        <h3 id="point">
+                            <!-- 0 -->
+                        </h3>
+                        <span>k</span>
+                       <img src="https://cdn-icons-png.flaticon.com/512/6573/6573652.png" width="30px"/>
+                   </div>
+                </div>
+            </div>
+            
+           </div>
+       </div>
+       <!-- first screen -->
+        <div class="in-game ">
+            <img src="images/3Ddice.webp" width="150px" class="cube"/>
+            <div class="content">
+                    <h1>Fortune Spin</h1>
+                    <p>Spin the dice to get a fortune earn as you spin</p>
+                    <span class="tooltip">
+                        <h1 style="font-size: 60px; ">?</h1>
+                    </span>     
+            </div>
+            <div class="catch-the-fun">
+                <button type="submit" class="play">TAP THE SCREEN TO PLAY</button>
+            </div>
+        </div>
+        <!-- screen 2 -->
+        <div class="spin-game hide">
+            <div class="dice-area">
+                  <div class="dice">
+                    <div class="result hide">
+                        <h2></h2>
+                    </div>
+                    <div class="two-dices">
+                       <div class="carpet">
+                           <div class="die-container " >
+                              <ol class="die-list even-roll" data-roll="1" id="die-1" >
+                                <li class="die-item" data-side="1">
+                                  <span class="dot"></span>
+                                </li>
+                                <li class="die-item" data-side="2">
+                                  <span class="dot"></span>
+                                  <span class="dot"></span>
+                                </li>
+                                <li class="die-item" data-side="3">
+                                  <span class="dot"></span>
+                                  <span class="dot"></span>
+                                  <span class="dot"></span>
+                                </li>
+                                <li class="die-item" data-side="4">
+                                  <span class="dot"></span>
+                                  <span class="dot"></span>
+                                  <span class="dot"></span>
+                                  <span class="dot"></span>
+                                </li>
+                                <li class="die-item" data-side="5">
+                                  <span class="dot"></span>
+                                  <span class="dot"></span>
+                                  <span class="dot"></span>
+                                  <span class="dot"></span>
+                                  <span class="dot"></span>
+                                </li>
+                                <li class="die-item" data-side="6">
+                                  <span class="dot"></span>
+                                  <span class="dot"></span>
+                                  <span class="dot"></span>
+                                  <span class="dot"></span>
+                                  <span class="dot"></span>
+                                  <span class="dot"></span>
+                                </li>
+                              </ol> 
+                           </div>
+                           <div class="die-container" >
+
+                           </div>
+                           
+                       </div>
+                       <div class="carpet">
+                             <div class="die-container" >
+                            </div>
+                            <div class="die-container" >
+                              <ol class="die-list odd-roll" data-roll="1" id="die-2" style="margin-right: 10px;">
+                                <li class="die-item" data-side="1">
+                                  <span class="dot"></span>
+                                </li>
+                                <li class="die-item" data-side="2">
+                                  <span class="dot"></span>
+                                  <span class="dot"></span>
+                                </li>
+                                <li class="die-item" data-side="3">
+                                  <span class="dot"></span>
+                                  <span class="dot"></span>
+                                  <span class="dot"></span>
+                                </li>
+                                <li class="die-item" data-side="4">
+                                  <span class="dot"></span>
+                                  <span class="dot"></span>
+                                  <span class="dot"></span>
+                                  <span class="dot"></span>
+                                </li>
+                                <li class="die-item" data-side="5">
+                                  <span class="dot"></span>
+                                  <span class="dot"></span>
+                                  <span class="dot"></span>
+                                  <span class="dot"></span>
+                                  <span class="dot"></span>
+                                </li>
+                                <li class="die-item" data-side="6">
+                                  <span class="dot"></span>
+                                  <span class="dot"></span>
+                                  <span class="dot"></span>
+                                  <span class="dot"></span>
+                                  <span class="dot"></span>
+                                  <span class="dot"></span>
+                                </li>
+                              </ol>
+                            </div>
+                            
+                       </div>
+                    </div>
+                  </div>
+
+                  <button class="roll" type="button" id="roll-button">Roll Dice</button>
+            </div>
+
+        </div>
+        <!-- congrats -->
+        <div class="congrats hide">
+            <div class="items">
+                <span style=" height: 240px;" class="stars">
+                    <img src="images/congrats.png" width="300px" alt="">
+                </span>
+              
+                <h2 class="neon-green header">You won a fortune</h2>
+                <h3 class="neon-green header">Your total Score is </h3>
+                <div  class="last_score">
+                  <h2 style="color: aliceblue; margin-top: 10px;"></h2>
+                </div>
+                <button class="redeem">
+                  <h3 class="header">Redeem now</h3>
+                </button>
+                   
+                <span class="repeat">
+                    <img src="/Task 2_Gamification/images/gift.png" width="80px" alt="">
+                </span>
+            </div>
+        </div>
+        
+       
+   </div>
+</div>   
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
+
+<script type="module" src="animation.js"></script>
+<script type="module" src="script.js"></script>
+
+
+</body>
+</html>
